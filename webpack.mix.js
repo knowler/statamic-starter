@@ -35,11 +35,12 @@ if (mix.inProduction()) {
       new PurgecssPlugin({
         paths: glob.sync([
           path.join(__dirname, '**/*.html')
+          path.join(__dirname, 'src/scripts/**/*.js')
         ]),
         extractors: [
           {
             extractor: TailwindExtractor,
-            extensions: ['html', 'js', 'php']
+            extensions: ['html', 'js']
           }
         ]
       })
